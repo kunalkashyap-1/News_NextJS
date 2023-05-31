@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ArticleGrid from "../components/ArticleGrid";
 import { Response } from "../../models/NewsArticles";
 import { getData } from "../api";
@@ -9,8 +8,7 @@ export default async function HomePage() {
   );
   return (
     <div>
-      <h1>Home Page</h1>
-      <Link href="/search">Search</Link>
+      <h1 className="text-xl">Breaking news</h1>
       <ArticleGrid articles={news.Data}/>
     </div>
   );

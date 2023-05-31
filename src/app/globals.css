@@ -5,3 +5,9 @@
 .pageContainer{
     margin:2rem auto;
 }
+
+.card-custom{
+    height:24rem;
+    margin:1rem;
+    /* border-radius: 15%; */
+}

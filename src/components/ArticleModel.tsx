@@ -9,8 +9,10 @@ const ArticleModel = ({
   article: { title, imageUrl, content, link },
 }: ArticleProps) => {
   const validImageUrl = imageUrl ? imageUrl : "custom link to a default image";
+  const truncatedContent = content.length > 100 ? `${content.substring(0, 100)}...` : content;
+
   return (
-    <a className="max-w-sm rounded overflow-hidden shadow-lg">
+    <a href={link} className="max-w-sm overflow-hidden  shadow-lg">
       <Image
         className="w-full"
         src={validImageUrl}
@@ -20,7 +22,7 @@ const ArticleModel = ({
       />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">{content}</p>
+        <p className="text-gray-700 text-base">{truncatedContent}</p>
       </div>
     </a>
   );

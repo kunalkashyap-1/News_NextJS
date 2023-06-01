@@ -8,7 +8,8 @@ export default async function HomePage() {
   );
   return (
     <div>
-      <h1 className="text-xl">Breaking news</h1>
+      <h1 className="text-4xl mx-4 underline">Breaking news</h1>
+      <hr/>
       <ArticleGrid articles={news.Data}/>
     </div>
   );

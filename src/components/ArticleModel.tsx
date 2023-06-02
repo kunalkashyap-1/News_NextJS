@@ -14,7 +14,7 @@ const ArticleModel = ({
   return (
     <a href={link} className="max-w-sm overflow-hidden  shadow-lg">
       <Image
-        className="w-full"
+        className="w-full rounded-md"
         src={validImageUrl}
         width={200}
         height={200}

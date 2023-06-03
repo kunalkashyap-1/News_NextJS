@@ -5,6 +5,31 @@ interface CategoriesPageProps {
   newsArticles: NewsArticles[];
 }
 
+export async function generateStaticParams() {
+  const categorySlugs = [
+    "india",
+    "us",
+    "uk",
+    "mumbai",
+    "delhi",
+    "varanasi",
+    "entertainment",
+    "tech",
+    "education",
+    "cricket",
+  ];
+
+  const posts = categorySlugs.map((slug) => {
+    return {
+      params: { categories: slug },
+    };
+  });
+  return {
+    posts,
+    fallback: false,
+  };
+}
+
 export const getDate = async ({
   params,
 }: {

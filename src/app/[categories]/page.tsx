@@ -1,58 +1,18 @@
-import { NewsArticles, Response } from "../../../models/NewsArticles";
+import { Response } from "../../../models/NewsArticles";
 import ArticleGrid from "../../components/ArticleGrid";
+import { getCategoryData } from "../../api";
 
-interface CategoriesPageProps {
-  newsArticles: NewsArticles[];
-}
 
-export async function generateStaticParams() {
-  const categorySlugs = [
-    "india",
-    "us",
-    "uk",
-    "mumbai",
-    "delhi",
-    "varanasi",
-    "entertainment",
-    "tech",
-    "education",
-    "cricket",
-  ];
+const CategoryPage = async ({ params }: { params: { categories: string } }) => {
 
-  const posts = categorySlugs.map((slug) => {
-    return {
-      params: { categories: slug },
-    };
-  });
-  return {
-    posts,
-    fallback: false,
-  };
-}
+  const result: Response = await getCategoryData(params.categories);
 
-export const getDate = async ({
-  params,
-}: {
-  params: { categories: string };
-}) => {
-  const category = params?.categories?.toString();
-  const response: any = await fetch(
-    `https://feedparsify.cyclic.app/nyt/feeds/${category}`
-  );
-  const newsResponse: Response = response.json();
-  return {
-    props: { newsArticles: newsResponse.Data },
-  };
-};
-
-const CategoryPage = ({ newsArticles }: CategoriesPageProps) => {
   return (
-    <>
       <div>
-        <ArticleGrid articles={newsArticles} />
+        <ArticleGrid articles={result.Data} />
       </div>
-    </>
   );
 };
+
 
 export default CategoryPage;

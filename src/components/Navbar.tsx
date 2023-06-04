@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Categories from "./DropDown";
 
 const Navbar = () => {
     return (
@@ -10,7 +11,7 @@ const Navbar = () => {
       </div>
       <div className="flex">
       <Link className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-md font-medium" href="/search">Search</Link>
-      <Link className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-md font-medium" href="/categories">categories</Link>
+      <Categories />
       </div>
     </div>
   </div>

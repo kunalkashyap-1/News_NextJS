@@ -11,19 +11,13 @@ const DropdownMenu = () => {
 
   const categoryArr = [
     "top_stories",
-    "latest_feeds",
-    "most_read",
-    "most_shared",
-    "india",
-    "us",
-    "uk",
-    "mumbai",
-    "delhi",
-    "varanasi",
     "entertainment",
     "tech",
     "education",
     "cricket",
+    "india",
+    "mumbai",
+    "delhi",
   ];
 
   return (
@@ -38,13 +32,19 @@ const DropdownMenu = () => {
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
           <ul>
-            {categoryArr && categoryArr.map((el:string)=>{
-              return (<li key={el} className="py-2 px-4 hover:bg-gray-100 hover:rounded-md">
-              <Link className="" href={el} onClick={toggleDropdown}>
-                {el.charAt(0).toUpperCase() + el.slice(1)}
-              </Link>
-            </li>)
-            })}
+            {categoryArr &&
+              categoryArr.map((el: string) => {
+                return (
+                  <li
+                    key={el}
+                    className="py-2 px-4 hover:bg-gray-100 hover:rounded-md"
+                  >
+                    <Link href={el} onClick={toggleDropdown}>
+                      <p className="w-full" >{el.charAt(0).toUpperCase() + el.slice(1)}</p>
+                    </Link>
+                  </li>
+                );
+              })}
           </ul>
         </div>
       )}

@@ -4,19 +4,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "static.toiimg.com",
+        hostname: "**",
         port: "",
         // pathname: '/account123/**',
       },
       {
-        protocol: "https",
-        hostname: "timesofindia.indiatimes.com",
-        port: "",
-        // pathname: '/account123/**',
-      },
-      {
-        protocol: "https",
-        hostname: "static01.nyt.com",
+        protocol: "http",
+        hostname: "**",
         port: "",
         // pathname: '/account123/**',
       },

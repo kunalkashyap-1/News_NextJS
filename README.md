@@ -40,8 +40,8 @@ npm install
 
 Once you have completed the installation and configuration steps, you can start running Primal Global on your local machine:
 
-```bash'
-Once you have completed the installation and configuration steps, you can start running Primal Global on your local machine:
+```bash
+npm run dev
 ```
 
 This command will launch the application and make it accessible at http://localhost:3000.
